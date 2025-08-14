@@ -123,6 +123,6 @@ variable "api" {
 }
 // Auto-generated variable declarations from massdriver.yaml
 variable "policy" {
-  type    = any
+  type    = string
   default = null
 }
