@@ -1,0 +1,27 @@
+name: Publish Collaborative Demo
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish_to_massdriver:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        bundle_dir: [apigateway, dynamodb, lambda]
+    env:
+      MASSDRIVER_ORG_ID: sandbox      
+      MASSDRIVER_API_KEY: ${{ secrets.COLLABORATIVE_DEMO_SERVICE_ACCOUNT_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Massdriver CLI
+        uses: massdriver-cloud/actions@v4
+
+      - name: Publish Bundle
+        uses: massdriver-cloud/actions/bundle_publish@v4
+        with:
+          build-directory: bundles/${{ matrix.bundle_dir }}
