@@ -1,6 +1,6 @@
 name: Publish Collaborative Demo
 on:
-  push:
+  pull_request:
     branches:
       - main
 
