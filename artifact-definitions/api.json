@@ -1,0 +1,81 @@
+{
+  "$md": {
+    "name": "api"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "An arbitrary API.",
+  "properties": {
+    "data": {
+      "properties": {
+        "api": {
+          "properties": {
+            "hostname": {
+              "description": "Service host name. If a second host name is needed for internal vs external access, a second artifact is recommended.",
+              "type": "string"
+            },
+            "port": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Port number",
+              "maximum": 65535,
+              "minimum": 0,
+              "title": "Port",
+              "type": "integer"
+            },
+            "protocol": {
+              "description": "API protocol",
+              "type": "string"
+            }
+          },
+          "required": [
+            "hostname",
+            "port"
+          ],
+          "type": "object"
+        },
+        "etc": {
+          "additionalProperties": true,
+          "description": "This field can be used to store arbitrary data to pass to downstream services.",
+          "type": "object"
+        }
+      },
+      "required": [
+        "api"
+      ],
+      "type": "object"
+    },
+    "specs": {
+      "additionalProperties": false,
+      "properties": {
+        "api": {
+          "description": "API specifications",
+          "properties": {
+            "version": {
+              "description": "API Version",
+              "type": "string"
+            },
+            "url": {
+              "description": "API URL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "version"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "api"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "data",
+    "specs"
+  ],
+  "title": "API / Web Service",
+  "type": "object"
+}

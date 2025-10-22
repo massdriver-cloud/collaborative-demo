@@ -321,7 +321,7 @@ artifacts:
     - table
   properties:
     table:
-      $ref: massdriver/aws-dynamodb-table
+      $ref: sandbox/aws-dynamodb-table
     stream:
       $ref: massdriver/aws-dynamodb-stream
 

@@ -14,11 +14,11 @@ app:
   envs:
     LOG_RETENTION: .params.observability.retention_days
     HOTELS_TABLE: .connections.dynamodb.data.infrastructure.arn
-  # secrets:
-  #   STRIPE_KEY:
-  #     required: true
-  #     title: Stripe Key
-  #     description: Stripe API Key
+  secrets:
+    STRIPE_KEY:
+      required: false
+      title: Stripe Key
+      description: Stripe API Key
 
 params:
   properties:
@@ -127,10 +127,10 @@ params:
       title: DynamoDB IAM Policy
       type: string
       ## MODULE_3.1
-      # $md.enum:
-      #   connection: "dynamodb"
-      #   options: ".data.security.iam | keys"
-      #   label: "ascii_upcase"
+      $md.enum:
+        connection: "dynamodb"
+        options: ".data.security.iam | keys"
+        label: "ascii_upcase"
 
 connections:
   required:
@@ -141,7 +141,12 @@ connections:
     api_gateway:
       $ref: massdriver/aws-api-gateway-rest-api
     dynamodb:
-      $ref: massdriver/aws-dynamodb-table
+      $ref: sandbox/aws-dynamodb-table
+
+artifacts:
+  properties:
+    endpoint:
+      $ref: sandbox/api
 
 ui:
   ui:order:
