@@ -1,6 +1,7 @@
 schema: draft-07
 name: aws-collab-lambda
 description: "Lambda - Collaborative Demo"
+version: 0.0.1
 
 steps:
   - path: function
