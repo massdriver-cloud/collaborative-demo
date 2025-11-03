@@ -1,7 +1,6 @@
 schema: draft-07
 name: aws-collab-apigateway
 description: "API Gateway Rest API - Collaborative Demo"
-type: "infrastructure"
 
 steps:
   - path: src

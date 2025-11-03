@@ -1,7 +1,7 @@
 schema: draft-07
 name: aws-collab-dynamodb
 description: "DynamoDB Table - Collaborative Demo"
-type: infrastructure
+version: 0.0.1
 
 params:
   ## MODULE_1.1
