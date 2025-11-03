@@ -51,10 +51,10 @@ project:
 # Help target to show available commands
 help:
 	@echo "Available targets:"
-	@echo "  all               - Publish all bundles and artifact definitions (default)"
+	@echo "  all               - Publish all bundles, artifact definitions, and create project (default)"
 	@echo "  publish-bundles   - Publish all bundles in the bundles/ directory"
 	@echo "  publish-artifacts - Publish all artifact definitions in artifact-definitions/"
 	@echo "  clean             - Remove schema-*.json build files"
 	@echo "  project           - Create a new Massdriver project with environment and packages"
-	@echo "                      Usage: make project [PROJECT_NAME=demoMMDD]"
+	@echo "                      Usage: make project [PROJECT_NAME=cdMMDD]"
 	@echo "  help              - Show this help message" 

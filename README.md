@@ -19,8 +19,22 @@ This demo implements a three-tier serverless application:
 │   └── lambda/                # Lambda function (Node.js)
 ├── artifact-definitions/       # Custom artifact schemas
 ├── components/                # Reusable schema components
-└── Makefile                   # Publishing automation
+└── Makefile                   # Publishing automation and project setup
 ```
+
+## 🛠️ Makefile Commands
+
+The project includes a Makefile with several useful commands:
+
+- `make project` - Create a new Massdriver project with environment and packages
+  - Default project name: `cdMMDD` (e.g., `cd1205` for December 5th)
+  - Custom name: `make project PROJECT_NAME=my-project`
+  - Creates packages with bundles: `aws-collab-apigateway`, `aws-collab-dynamodb`, `aws-collab-lambda`
+- `make publish-bundles` - Publish all bundles to Massdriver
+- `make publish-artifacts` - Publish all artifact definitions
+- `make all` - Publish everything and create project (default target)
+- `make clean` - Remove generated schema JSON files
+- `make help` - Show all available commands
 
 ## 🚀 Quick Start
 
@@ -30,13 +44,27 @@ This demo implements a three-tier serverless application:
    cd collaborative-demo
    ```
 
-2. **Open in your favorite editor**
+2. **Create a Massdriver project** (optional)
+   ```bash
+   # Create a project with default name (cdMMDD where MMDD is current month/day)
+   make project
+   
+   # Or specify a custom project name
+   make project PROJECT_NAME=my-demo-project
+   ```
+   This will:
+   - Delete any existing project with the same name (if it exists)
+   - Create a new Massdriver project with name "🧪 Collaborative Demo {PROJECT_NAME}"
+   - Create a staging environment
+   - Create packages for apigateway, dynamodb, and lambda with their respective bundles
+
+3. **Open in your favorite editor**
    ```bash
    code .  # VS Code
    # or your preferred editor
    ```
 
-3. **Ready to collaborate!** 
+4. **Ready to collaborate!** 
    We'll explore and modify the infrastructure code together during our session.
 
 ## 💡 Demo Flow
