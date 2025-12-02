@@ -1,7 +1,7 @@
 schema: draft-07
 name: aws-collab-dynamodb
 description: "DynamoDB Table - Collaborative Demo"
-version: 0.0.1
+version: 0.2.1
 
 params:
   ## MODULE_1.1
@@ -36,7 +36,7 @@ params:
       # - us-west-2
       # - us-west-1
       ## MODULE_1.4
-      # $md.immutable: true      
+      # $md.immutable: true
     capacity:
       type: object
       title: Capacity
@@ -92,7 +92,7 @@ params:
                   - title: String
                     const: S
                   - title: Number
-                    const: N
+                    const: "N"
                   - title: Binary
                     const: B  
                 sort_key:
@@ -107,7 +107,7 @@ params:
                   - title: String
                     const: S
                   - title: Number
-                    const: N
+                    const: "N"
                   - title: Binary
                     const: B
               required:
@@ -130,7 +130,7 @@ params:
                   - title: String
                     const: S
                   - title: Number
-                    const: N
+                    const: "N"
                   - title: Binary
                     const: B
               required:
@@ -200,7 +200,7 @@ params:
                         - title: String
                           const: S
                         - title: Number
-                          const: N
+                          const: "N"
                         - title: Binary
                           const: B
                       sort_key:
@@ -213,7 +213,7 @@ params:
                         - title: String
                           const: S
                         - title: Number
-                          const: N
+                          const: "N"
                         - title: Binary
                           const: B
 
@@ -236,7 +236,7 @@ params:
                         - title: String
                           const: S
                         - title: Number
-                          const: N
+                          const: "N"
                         - title: Binary
                           const: B
 

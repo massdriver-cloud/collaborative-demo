@@ -74,9 +74,5 @@ resource "aws_dynamodb_table" "main" {
 #   source       = "github.com/massdriver-cloud/terraform-modules//aws/forecasted-monthly-cost-budget"
 #   limit_amount = var.budget.limit_amount
 #   md_metadata  = var.md_metadata
-
 #   subscriber_email_addresses = var.budget.email_addresses
-#   # [
-#   #  var.md_metadata.target.contact_email
-#   # ]
 # }
